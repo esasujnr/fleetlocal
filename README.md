@@ -8,7 +8,7 @@ There are two ways to retrieve this repository:
 
 - **Clone with Git**
 ```bash
-git clone https://github.com/AlexisMGL/fleetlocal.git
+https://github.com/esasujnr/fleetlocal.git
 ```
 - **Download the ZIP archive from GitHub**
 On the repository page, click **Code** then **Download ZIP**, then unzip the archive.
