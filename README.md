@@ -1,81 +1,47 @@
 # Fleet Local
 
-Ce dépôt contient le script `fleetshare_ws.py` permettant d'envoyer les données MAVLink vers mon serveur FleetShare 🚀.
+This repository contains the `fleetshare_ws.py` script used to send MAVLink data to my FleetShare server 🚀.
 
-## Télécharger le projet 📥
+## Download the project 📥
 
-Deux méthodes permettent de récupérer ce dépôt :
+There are two ways to retrieve this repository:
 
-- **Cloner avec Git**
-  ```bash
+- **Clone with Git**
+```bash
   git clone https://github.com/AlexisMGL/fleetlocal.git
   ```
-- **Télécharger l'archive ZIP depuis GitHub**
-  Sur la page du dépôt, cliquez sur **Code** puis **Download ZIP**, puis décompressez l'archive.
+- **Download the ZIP archive from GitHub**
+  On the repository page, click **Code** then **Download ZIP**, then unzip the archive.
 
-## Prérequis 📦
+## Prerequisites 📦
 
-- Python 3.8 ou supérieur installé sur votre machine. Vous pouvez le télécharger sur [python.org](https://www.python.org/downloads/).
-- Une connexion Internet pour installer les dépendances Python.
+- Python 3.8 or higher installed on your machine. You can download it from [python.org](https://www.python.org/downloads/).
+- An Internet connection to install Python dependencies.
 
-## Installation et exécution sous Windows PowerShell 💻
+## Installation and execution in Windows PowerShell 💻
 
-1. Ouvrez **Windows PowerShell**.
-2. Positionnez-vous dans le répertoire du projet :
-   ```powershell
-   cd chemin\vers\le\dossier\cloné
+1. Open **Windows PowerShell**.
+2. Navigate to the project directory:
+```powershell
+   cd path\to\cloned\folder
    ```
-3. Installez les dépendances définies dans `requirements.txt` :
-   ```powershell
+3. Install the dependencies defined in `requirements.txt`:
+```powershell
    pip install -r requirements.txt
    ```
-4. Lancez le script depuis un terminal 🖥️:
-   ```powershell
+4. Run the script from a terminal 🖥️:
+```powershell
    python fleetshare_ws.py
    ```
 
-Le script se connecte au flux MAVLink fourni par `WS_URI` et envoie périodiquement les données au serveur HTTP configuré.
+The script connects to the MAVLink stream provided by `WS_URI` and periodically sends the data to the configured HTTP server.
 
-## Messages d'erreur ⚠️
+## Error messages ⚠️
 
-En cas de message d'erreur ou de blocage du script, tentez les étapes suivantes :
+If you encounter an error message or the script freezes, try the following steps:
 
-1. Appuyez sur **CTRL+W** pour tuer le script dans la console. 🛑
-2. Utilisez la **flèche du haut** pour rappeler la commande précédente. ⬆️
-3. Appuyez sur **Entrée** pour relancer le script. 🔁
+1. Press **CTRL+W** to kill the script in the console. 🛑
+2. Use the **up arrow** to recall the previous command. ⬆️
+3. Press **Enter** to restart.
 
-Si les erreurs persistent, vérifiez votre connexion Internet et les paramètres `WS_URI` et `HTTP_ENDPOINT`.
-
-## Utilisation en vol ✈️
-
-Le streamer doit rester **lancé pendant tout le vol** afin de continuer d'envoyer
-les informations télémétriques. Ces informations sont disponibles sous forme
-de données brutes sur
-<https://fleetshare.onrender.com/drone-position> et peuvent être visualisées
-sur la carte à l'adresse <https://fleetshare.onrender.com>.
-
-Si le streamer est connecté lorsque le pilote envoie la commande « Lecture PN »,
-il récupère alors les *waypoints* de la mission et les affiche également sur
-l'interface web.
-
-
-
-
-## Execution automatique avec le Planificateur de taches Windows
-
-1. Ouvre `taskschd.msc` et cree une **Nouvelle tache** (par exemple "FleetShare WS").
-2. Onglet **Actions** :
-   - `Programme/script` -> `C:\Users\alexi\AppData\Local\Programs\Python\Python313\pythonw.exe` (ou ta version de Python).
-   - `Ajouter des arguments` -> `C:\Users\alexi\Desktop\AlexisMGL\fleetlocal\fleetshare_ws.py`.
-   - `Demarrer dans` -> `C:\Users\alexi\Desktop\AlexisMGL\fleetlocal`.
-3. Onglet **Declencheurs** :
-   - Ajoute "A l'ouverture de session" ou "Au demarrage" selon le besoin.
-   - Active "Recommencer toutes les 5 minutes" si tu veux qu'il se relance apres un arret.
-4. Onglet **Conditions** :
-   - Decoche "Demarrer la tache uniquement si l'ordinateur est sur secteur" pour l'executer sur batterie.
-5. Onglet **Parametres** :
-   - Coche "Autoriser l'execution a la demande" et laisse "Arreter la tache si elle s'execute plus de" desactive.
-6. Valide la tache puis clique sur **Executer** pour tester :
-   - La fenetre console n'apparait pas grace a `pythonw.exe`.
-   - Le script attend automatiquement que `MissionPlanner.exe` ou `GCSAM.exe` soit lance avant de commencer a envoyer les donnees, et se remet en attente si tu fermes ces programmes.
-
+Translated with DeepL.com (free version)
