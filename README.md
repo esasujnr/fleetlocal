@@ -34,8 +34,8 @@ The script connects to the MAVLink stream provided by `WS_URI` and periodically 
 
 The streamer must remain **running throughout the flight** in order to continue sending
 telemetry information. This information is available in raw data form at
-<https://fleetshare.onrender.com/drone-position> and can be viewed
-on the map at <https://fleetshare.onrender.com>.
+<https://fleetshare-wingxtra.onrender.com/index.html/drone-position> and can be viewed
+on the map at <https://fleetshare-wingxtra.onrender.com/index.html/drone-position>.
 
 If the streamer is connected when the pilot sends the “PN Playback” command,
 it retrieves the mission waypoints and also displays them on
